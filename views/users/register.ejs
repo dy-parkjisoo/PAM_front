@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+  <div class="container">
+      <% if (errors.length > 0) { %>
+        <% errors.forEach(err => { %>
+            <div class="alert alert-danger"><%= err.text %></div>
+        <% }); %>
+      <% } %>
+      <div class="col-md-6 mx-auto">
+        <div class="card card-body">
+          <h3 class="text-center" style="font-weight: bold;">회원가입</h3>
+          <form action="/users/register" method="post">
+            <div class="form-group">
+              <label for="name">이름</label>
+              <input type="text" class="form-control" name="name" value="<%= name %>" required>
+            </div>
+            <div class="form-group">
+              <label for="email">이메일</label>
+              <input type="email" class="form-control" name="email" value="<%= email %>"required>
+            </div>
+            <div class="form-group">
+              <label for="password">비밀번호</label>
+              <input type="password" class="form-control" name="password" value="<%= password %>" required>
+            </div>
+            <div class="form-group">
+              <label for="email">비밀번호 확인</label>
+              <input type="password" class="form-control" name="rpassword" value="<%= rpassword %>" required>
+            </div>
+            <div style="justify-content: center; display: flex;align-items: center;">
+              <button type="submit" class="btn btn-grey">확인</button>
+              </div>
+              <div style="justify-content: center; display: flex;align-items: center;">
+              <a href="/users/login" class="nav-link" style="color: #78d843; margin-top: 10px; font-size: 12px;">로그인</a>
+              </div>
+          </form>
+        </div>
+      </div>
+  </div>
+<% include ../partials/scripts %>
+</body>
+</html>

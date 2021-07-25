@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+  <div class="container">
+      <div class="col-md-6 mx-auto">
+        <div class="card card-body">
+          <h3 class="text-center" style="font-weight: bold;">로그인</h3>
+          <form action="/users/login" method="post">
+            <div class="form-group">
+              <label for="email">이메일</label>
+              <input type="email" class="form-control" name="email" required autofocus>
+            </div>
+            <div class="form-group">
+              <label for="password">비밀번호</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <div style="justify-content: center; display: flex;align-items: center;">
+            <button type="submit" class="btn btn-grey">확인</button>
+            </div>
+            <div style="justify-content: center; display: flex;align-items: center;">
+            <a href="/users/register" class="nav-link" style="color: #78d843; margin-top: 10px; font-size: 12px;">회원가입</a>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+<% include ../partials/scripts %>
+</body>
+</html>
